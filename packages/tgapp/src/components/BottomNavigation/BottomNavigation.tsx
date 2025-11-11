@@ -1,26 +1,13 @@
-import { Home, Lock, Network, Rocket, ShoppingBasket } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-
-interface NavItem {
-  to?: string;
-  translationKey: string;
-  icon: React.ComponentType<{ className?: string }>;
-  disabled?: boolean;
-}
+import { BOTTOM_NAV_ITEMS } from '@/config/navigation.constants';
 
 export function BottomNavigation() {
   const { t } = useTranslation();
   const location = useLocation();
 
-  const navItems: NavItem[] = [
-    { to: '/', translationKey: 'common.home', icon: Home },
-    { to: '/shop', translationKey: 'common.shop', icon: ShoppingBasket },
-    { to: '/events', translationKey: 'common.events', icon: Rocket },
-    { to: '/network', translationKey: 'common.network', icon: Network },
-    { translationKey: 'common.comingSoon', icon: Lock, disabled: true },
-  ];
+  const navItems = BOTTOM_NAV_ITEMS;
 
   return (
     <nav className="fixed bottom-0 inset-x-0 bg-background border-t border-border z-50">

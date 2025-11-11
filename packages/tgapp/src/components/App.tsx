@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '@/components/Layout/Layout';
 import { useDirection } from '@/hooks/useDirection';
 import { useTelegramTheme } from '@/hooks/useTelegramTheme';
-import { Home } from '@/pages/Home';
 import { Events } from '@/pages/Events';
+import { Home } from '@/pages/Home';
 
 export function App() {
   useTelegramTheme();
