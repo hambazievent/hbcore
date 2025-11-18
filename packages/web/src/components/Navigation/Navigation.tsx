@@ -22,6 +22,31 @@ const navigationItems: NavItem[] = [
     href: '/',
     description: 'رفتن به صفحه اصلی',
   },
+  {
+    title: 'ویدادها',
+    href: '/events',
+    description: 'مشاهده رویدادها',
+  },
+  {
+    title: 'ویژگی‌ها',
+    href: '/features',
+    description: 'مشاهده ویژگی‌های برنامه',
+  },
+  {
+    title: 'تماس با ما',
+    href: '/contact',
+    description: 'ارتباط با ما',
+  },
+  {
+    title: 'سوالات متداول',
+    href: '/faq',
+    description: 'پاسخ به سوالات متداول',
+  },
+  {
+    title: 'ثبت نام',
+    href: '/signup',
+    description: 'ثبت نام در برنامه',
+  },
 ];
 
 export function Navigation() {

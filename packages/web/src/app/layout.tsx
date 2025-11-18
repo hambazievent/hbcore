@@ -22,8 +22,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'HBCore',
-  description: 'HBCore Application',
+  title: 'همبازی ایونت',
+  description: 'همبازی ایونت',
 };
 
 export default function RootLayout({
