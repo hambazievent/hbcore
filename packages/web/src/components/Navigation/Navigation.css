@@ -1,0 +1,31 @@
+.navigation {
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.navigation-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.navigation-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-brand-link {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navigation-brand-link:hover {
+  color: var(--primary);
+}
