@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -7,7 +8,6 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import Link from 'next/link';
 import './Navigation.css';
 
 interface NavItem {
@@ -18,9 +18,9 @@ interface NavItem {
 
 const navigationItems: NavItem[] = [
   {
-    title: 'Home',
+    title: 'خانه',
     href: '/',
-    description: 'Go to the home page',
+    description: 'رفتن به صفحه اصلی',
   },
 ];
 
@@ -30,7 +30,7 @@ export function Navigation() {
       <div className="navigation-container">
         <div className="navigation-brand">
           <Link href="/" className="navigation-brand-link">
-            HBCore
+            همبازی ایونت
           </Link>
         </div>
         <NavigationMenu>

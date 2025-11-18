@@ -69,8 +69,10 @@ export const designTokens = {
   },
   typography: {
     fontFamily: {
-      sans: 'var(--font-geist-sans)',
+      primary: 'var(--font-rubik)',
+      body: 'var(--font-vazirmatn)',
       mono: 'var(--font-geist-mono)',
+      sans: 'var(--font-vazirmatn)', // Alias for body font
     },
     fontSize: {
       xs: '0.75rem', // 12px

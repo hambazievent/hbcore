@@ -6,7 +6,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-primary: var(--font-rubik);
+  --font-body: var(--font-vazirmatn);
+  --font-sans: var(--font-vazirmatn);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -230,5 +232,23 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-vazirmatn), "Tahoma", "Arial", "Segoe UI", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-rubik), var(--font-vazirmatn), sans-serif;
+  }
+  /* RTL support */
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+  [dir="rtl"] * {
+    text-align: inherit;
   }
 }
