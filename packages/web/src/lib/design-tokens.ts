@@ -5,47 +5,47 @@
 
 export const designTokens = {
   colors: {
-    // Brand colors - Tango (#EA7525) palette
+    // Brand colors - Orange/Red palette (#F2613F, #9B3922, #481E14)
     brand: {
-      50: '#FEF5EF',
-      100: '#FDE6D3',
-      200: '#FBCBA7',
-      300: '#F8A871',
-      400: '#F57F3A',
-      500: '#EA7525', // Tango - Primary brand color
-      600: '#D15F1A',
-      700: '#AE4A15',
-      800: '#8B3A14',
-      900: '#723012',
-      950: '#3D1809',
+      50: '#FEF2F0',
+      100: '#FDE0D9',
+      200: '#FBC1B3',
+      300: '#F8A28D',
+      400: '#F2613F', // Coral Orange - Primary brand color
+      500: '#9B3922', // Burnt Orange - Main brand color
+      600: '#7D2E1B',
+      700: '#5F2314',
+      800: '#481E14', // Dark Reddish-Brown
+      900: '#2F140D',
+      950: '#1A0A07',
     },
-    // Accent colors - Blue Zodiac (#14345B) palette
+    // Accent colors - Variations of brand colors for accents
     accent: {
-      50: '#E8EDF3',
-      100: '#D1DBE7',
-      200: '#A3B7CF',
-      300: '#7593B7',
-      400: '#476F9F',
-      500: '#14345B', // Blue Zodiac - Primary accent color
-      600: '#102A49',
-      700: '#0C2037',
-      800: '#081625',
-      900: '#040C13',
-      950: '#020609',
+      50: '#FEF2F0',
+      100: '#FDE0D9',
+      200: '#FBC1B3',
+      300: '#F8A28D',
+      400: '#F2613F', // Coral Orange
+      500: '#9B3922', // Burnt Orange
+      600: '#7D2E1B',
+      700: '#5F2314',
+      800: '#481E14', // Dark Reddish-Brown
+      900: '#2F140D',
+      950: '#1A0A07',
     },
-    // Neutral colors - Spring Wood (#F8F9F4) and Shuttle Gray (#54646C)
+    // Neutral colors - Black (#0C0C0C) based grayscale
     neutral: {
-      50: '#F8F9F4', // Spring Wood
-      100: '#F0F2EA',
-      200: '#E1E5D5',
-      300: '#D2D8C0',
-      400: '#C3CBAB',
-      500: '#B4BE96',
-      600: '#9BA57F',
-      700: '#828C68',
-      800: '#54646C', // Shuttle Gray
-      900: '#434F54',
-      950: '#2A3236',
+      50: '#F5F5F5',
+      100: '#E5E5E5',
+      200: '#CCCCCC',
+      300: '#B3B3B3',
+      400: '#999999',
+      500: '#808080',
+      600: '#666666',
+      700: '#4D4D4D',
+      800: '#333333',
+      900: '#1A1A1A',
+      950: '#0C0C0C', // Black
     },
   },
   spacing: {

@@ -28,30 +28,30 @@ export function getColorVariable(palette: ColorPalette, scale: ColorScale): stri
  */
 export const themeConfig = {
   light: {
-    background: designTokens.colors.neutral[50], // Spring Wood
+    background: designTokens.colors.neutral[50],
     foreground: designTokens.colors.neutral[950],
-    primary: designTokens.colors.brand[500], // Tango
+    primary: designTokens.colors.brand[500], // Burnt Orange
     primaryForeground: designTokens.colors.neutral[50],
     secondary: designTokens.colors.neutral[100],
     secondaryForeground: designTokens.colors.neutral[900],
-    accent: designTokens.colors.accent[500], // Blue Zodiac
+    accent: designTokens.colors.accent[400], // Coral Orange
     accentForeground: designTokens.colors.neutral[50],
     muted: designTokens.colors.neutral[100],
-    mutedForeground: designTokens.colors.neutral[800], // Shuttle Gray
+    mutedForeground: designTokens.colors.neutral[800],
     border: designTokens.colors.neutral[200],
     input: designTokens.colors.neutral[200],
     ring: designTokens.colors.brand[500],
   },
   dark: {
-    background: designTokens.colors.neutral[950],
+    background: designTokens.colors.neutral[950], // Black
     foreground: designTokens.colors.neutral[50],
-    primary: designTokens.colors.brand[500], // Tango
+    primary: designTokens.colors.brand[500], // Burnt Orange
     primaryForeground: designTokens.colors.neutral[50],
     secondary: designTokens.colors.neutral[800],
     secondaryForeground: designTokens.colors.neutral[50],
-    accent: designTokens.colors.accent[400],
+    accent: designTokens.colors.accent[400], // Coral Orange
     accentForeground: designTokens.colors.neutral[50],
-    muted: designTokens.colors.neutral[800], // Shuttle Gray
+    muted: designTokens.colors.neutral[800],
     mutedForeground: designTokens.colors.neutral[300],
     border: designTokens.colors.neutral[700],
     input: designTokens.colors.neutral[700],

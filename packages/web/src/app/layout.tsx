@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className="dark">
       <body className={`${rubik.variable} ${vazirmatn.variable} ${geistMono.variable} antialiased`}>
         <Navigation />
         <main>{children}</main>
