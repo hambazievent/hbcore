@@ -31,7 +31,7 @@ function Feature({ iconSrc, iconAlt, title, description, isLoading = false }: Fe
         )}
       </div>
       <h3 className="feature-title">{isLoading ? <Skeleton className="h-6 w-32 mb-2" /> : title}</h3>
-      <p className="feature-description">
+      <div className="feature-description">
         {isLoading ? (
           <>
             <Skeleton className="h-4 w-full mb-2" />
@@ -40,7 +40,7 @@ function Feature({ iconSrc, iconAlt, title, description, isLoading = false }: Fe
         ) : (
           description
         )}
-      </p>
+      </div>
     </div>
   );
 }
@@ -81,7 +81,7 @@ function Benefit({
       </div>
       <div className="benefit-content">
         <h2 className="benefit-headline">{isLoading ? <Skeleton className="h-8 w-full mb-4" /> : headline}</h2>
-        <p className="benefit-paragraph">
+        <div className="benefit-paragraph">
           {isLoading ? (
             <>
               <Skeleton className="h-4 w-full mb-2" />
@@ -91,7 +91,7 @@ function Benefit({
           ) : (
             paragraph
           )}
-        </p>
+        </div>
         <ul className="benefit-bullets">
           {isLoading ? (
             <>
