@@ -25,9 +25,9 @@ function Feature({ iconSrc, iconAlt, title, description, isLoading = false }: Fe
     <div className="feature-card">
       <div className="feature-icon">
         {isLoading ? (
-          <Skeleton className="w-12 h-12 rounded-lg" />
+          <Skeleton className="feature-icon-skeleton" />
         ) : (
-          <Image src={iconSrc} alt={iconAlt} width={48} height={48} className="feature-icon-image" />
+          <Image src={iconSrc} alt={iconAlt} width={96} height={96} className="feature-icon-image" />
         )}
       </div>
       <h3 className="feature-title">{isLoading ? <Skeleton className="h-6 w-32 mb-2" /> : title}</h3>

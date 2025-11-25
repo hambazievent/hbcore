@@ -41,9 +41,15 @@
   justify-content: center;
 }
 
+.feature-icon-skeleton {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-lg);
+}
+
 .feature-icon-image {
-  width: 48px;
-  height: 48px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
 }
 
@@ -212,6 +218,16 @@
     padding: 1.5rem;
   }
 
+  .feature-icon-skeleton {
+    width: 80px;
+    height: 80px;
+  }
+
+  .feature-icon-image {
+    width: 80px;
+    height: 80px;
+  }
+
   .benefits-section {
     gap: 4rem;
   }
@@ -248,6 +264,16 @@
 
   .feature-card {
     padding: 1.25rem;
+  }
+
+  .feature-icon-skeleton {
+    width: 72px;
+    height: 72px;
+  }
+
+  .feature-icon-image {
+    width: 72px;
+    height: 72px;
   }
 
   .benefit-illustration {
