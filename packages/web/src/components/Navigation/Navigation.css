@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: space-between;
   height: 4.5rem;
+  direction: ltr;
 }
 
 .navigation-brand {
@@ -34,6 +35,37 @@
 
 .navigation-brand-link:hover {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.navigation-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  direction: ltr;
+}
+
+.navigation-language-switcher {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.navigation-language-switcher:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navigation-language-switcher:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .navigation-login {
@@ -57,6 +89,15 @@
 }
 
 /* Override navigation menu styles for white text */
+/* Allow menu to respect document direction for text, while container layout stays fixed */
+html[dir="rtl"] .navigation [data-slot="navigation-menu"] {
+  direction: rtl;
+}
+
+html[dir="ltr"] .navigation [data-slot="navigation-menu"] {
+  direction: ltr;
+}
+
 .navigation [data-slot="navigation-menu-list"] {
   gap: 0.5rem;
 }

@@ -8,16 +8,23 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { useTranslation } from '@/i18n/useTranslation';
 import './Navigation.css';
 
 const navigationItems = [
-  { title: 'Product', href: '#' },
-  { title: 'Features', href: '#' },
-  { title: 'Marketplace', href: '#' },
-  { title: 'Company', href: '#' },
-];
+  { key: 'home', href: '#hero' },
+  { key: 'features', href: '#features' },
+  { key: 'benefits', href: '#benefits' },
+  { key: 'proof', href: '#proof' },
+  { key: 'objections', href: '#objections' },
+  { key: 'cta', href: '#cta' },
+] as const;
+
+type NavigationKey = (typeof navigationItems)[number]['key'];
 
 export function Navigation() {
+  const { t, language, toggleLanguage } = useTranslation();
+
   return (
     <nav className="navigation">
       <div className="navigation-container">
@@ -29,17 +36,25 @@ export function Navigation() {
         <NavigationMenu>
           <NavigationMenuList>
             {navigationItems.map((item) => (
-              <NavigationMenuItem key={item.title}>
+              <NavigationMenuItem key={item.key}>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href={item.href}>{item.title}</Link>
+                  <Link href={item.href}>{t(`navigation.${item.key}` as `navigation.${NavigationKey}`)}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="navigation-login">
+        <div className="navigation-actions">
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            className="navigation-language-switcher"
+            aria-label="Switch language"
+          >
+            {language === 'fa' ? 'EN' : 'FA'}
+          </button>
           <Link href="#" className="navigation-login-link">
-            Log in →
+            {t('common.login')} →
           </Link>
         </div>
       </div>

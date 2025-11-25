@@ -1,0 +1,13 @@
+{
+  "navigation": {
+    "home": "خانه",
+    "features": "ویژگی‌ها",
+    "benefits": "مزایا",
+    "proof": "نظر مردم",
+    "objections": "رفع نگرانی‌ها",
+    "cta": "ثبت‌نام"
+  },
+  "common": {
+    "login": "ورود"
+  }
+}

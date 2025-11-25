@@ -1,0 +1,13 @@
+{
+  "navigation": {
+    "home": "Home",
+    "features": "Features",
+    "benefits": "Benefits",
+    "proof": "Social Proof",
+    "objections": "Handle Objections",
+    "cta": "Call to Action"
+  },
+  "common": {
+    "login": "Log in"
+  }
+}
