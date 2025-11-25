@@ -137,22 +137,22 @@ export function FeaturesAndBenefits() {
           <Feature
             iconSrc={analyticsSetupIcon}
             iconAlt="Analytics Setup"
-            title={t('featuresAndBenefits.features.feature1.title')}
-            description={t('featuresAndBenefits.features.feature1.description')}
+            title={t.featuresAndBenefits.features.feature1.title}
+            description={t.featuresAndBenefits.features.feature1.description}
             isLoading={isLoading}
           />
           <Feature
             iconSrc={mindfulnessIcon}
             iconAlt="Mindfulness"
-            title={t('featuresAndBenefits.features.feature2.title')}
-            description={t('featuresAndBenefits.features.feature2.description')}
+            title={t.featuresAndBenefits.features.feature2.title}
+            description={t.featuresAndBenefits.features.feature2.description}
             isLoading={isLoading}
           />
           <Feature
             iconSrc={halloweenIcon}
             iconAlt="Halloween"
-            title={t('featuresAndBenefits.features.feature3.title')}
-            description={t('featuresAndBenefits.features.feature3.description')}
+            title={t.featuresAndBenefits.features.feature3.title}
+            description={t.featuresAndBenefits.features.feature3.description}
             isLoading={isLoading}
           />
         </div>
@@ -162,13 +162,13 @@ export function FeaturesAndBenefits() {
         <Benefit
           illustrationSrc={eatingTogetherIllustration}
           illustrationAlt="Eating Together"
-          headline={t('featuresAndBenefits.benefits.benefit1.headline')}
-          paragraph={t('featuresAndBenefits.benefits.benefit1.paragraph')}
+          headline={t.featuresAndBenefits.benefits.benefit1.headline}
+          paragraph={t.featuresAndBenefits.benefits.benefit1.paragraph}
           bullets={[
-            t('featuresAndBenefits.benefits.benefit1.bullet1'),
-            t('featuresAndBenefits.benefits.benefit1.bullet2'),
-            t('featuresAndBenefits.benefits.benefit1.bullet3'),
-            t('featuresAndBenefits.benefits.benefit1.bullet4'),
+            t.featuresAndBenefits.benefits.benefit1.bullet1,
+            t.featuresAndBenefits.benefits.benefit1.bullet2,
+            t.featuresAndBenefits.benefits.benefit1.bullet3,
+            t.featuresAndBenefits.benefits.benefit1.bullet4,
           ]}
           imagePosition="right"
           isLoading={isLoading}
@@ -176,12 +176,12 @@ export function FeaturesAndBenefits() {
         <Benefit
           illustrationSrc={halloweenIcon}
           illustrationAlt="Halloween"
-          headline={t('featuresAndBenefits.benefits.benefit2.headline')}
-          paragraph={t('featuresAndBenefits.benefits.benefit2.paragraph')}
+          headline={t.featuresAndBenefits.benefits.benefit2.headline}
+          paragraph={t.featuresAndBenefits.benefits.benefit2.paragraph}
           bullets={[
-            t('featuresAndBenefits.benefits.benefit2.bullet1'),
-            t('featuresAndBenefits.benefits.benefit2.bullet2'),
-            t('featuresAndBenefits.benefits.benefit2.bullet3'),
+            t.featuresAndBenefits.benefits.benefit2.bullet1,
+            t.featuresAndBenefits.benefits.benefit2.bullet2,
+            t.featuresAndBenefits.benefits.benefit2.bullet3,
           ]}
           imagePosition="left"
           isLoading={isLoading}

@@ -20,9 +20,9 @@ export function SocialProof() {
     {
       company: 'vercel',
       avatar: 'guillermo-rauch.jpg',
-      name: t('socialProof.testimonials.testimonial1.name'),
-      role: t('socialProof.testimonials.testimonial1.role'),
-      review: t('socialProof.testimonials.testimonial1.review'),
+      name: t.socialProof.testimonials.testimonial1.name,
+      role: t.socialProof.testimonials.testimonial1.role,
+      review: t.socialProof.testimonials.testimonial1.review,
     },
   ];
 

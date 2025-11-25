@@ -19,14 +19,14 @@ export function Hero({ imagePath = '/images/hero/hero_1.jpg' }: HeroProps) {
         <div className="hero-overlay" />
       </div>
       <div className="hero-content">
-        <h1 className="hero-title">{t('hero.title')}</h1>
-        <p className="hero-subtitle">{t('hero.subtitle')}</p>
+        <h1 className="hero-title">{t.hero.title}</h1>
+        <p className="hero-subtitle">{t.hero.subtitle}</p>
         <div className="hero-ctas">
           <Link href="#" className="hero-cta-primary">
-            {t('hero.ctaPrimary')}
+            {t.hero.ctaPrimary}
           </Link>
           <Link href="#" className="hero-cta-secondary">
-            {t('hero.ctaSecondary')}
+            {t.hero.ctaSecondary}
           </Link>
         </div>
       </div>

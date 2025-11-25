@@ -21,8 +21,6 @@ const navigationItems = [
   { key: 'cta', href: '#cta' },
 ] as const;
 
-type NavigationKey = (typeof navigationItems)[number]['key'];
-
 export function Navigation() {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,7 +51,7 @@ export function Navigation() {
             {navigationItems.map((item) => (
               <NavigationMenuItem key={item.key}>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link href={item.href}>{t(`navigation.${item.key}` as `navigation.${NavigationKey}`)}</Link>
+                  <Link href={item.href}>{t.navigation[item.key]}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
@@ -69,7 +67,7 @@ export function Navigation() {
             {language === 'fa' ? 'EN' : 'FA'}
           </button> */}
           <Link href="#" className="navigation-login-link">
-            {t('common.login')} →
+            {t.common.login} →
           </Link>
         </div>
       </div>

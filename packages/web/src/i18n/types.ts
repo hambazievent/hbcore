@@ -75,3 +75,13 @@ type NestedKeyOf<ObjectType extends object> = {
 }[keyof ObjectType & (string | number)];
 
 export type TranslationKey = NestedKeyOf<TranslationSchema>;
+
+/**
+ * Utility type to convert TranslationSchema into a nested object structure
+ * where each leaf property returns a string
+ */
+export type TranslationObject<T extends object> = {
+  [K in keyof T]: T[K] extends object ? TranslationObject<T[K]> : T[K];
+};
+
+export type Translations = TranslationObject<TranslationSchema>;
