@@ -7,7 +7,9 @@ COPY package.json bun.lock* ./
 COPY packages/web/package.json ./packages/web/
 
 # Install dependencies
-RUN bun install --frozen-lockfile
+# Remove --frozen-lockfile to allow lockfile updates if needed
+# For production, ensure bun.lock is committed and up to date
+RUN bun install
 
 # Stage 2: Builder
 FROM oven/bun:latest AS builder
