@@ -51,6 +51,15 @@
         "bullet2": "Publish across social channels in a click",
         "bullet3": "Sell your videos worldwide"
       }
+    },
+    "socialProof": {
+      "testimonials": {
+        "testimonial1": {
+          "name": "Guillermo Rauch",
+          "role": "CEO, Vercel",
+          "review": "webtics delivers powerful insights that turn complex data into actionable decisions"
+        }
+      }
     }
   }
 }

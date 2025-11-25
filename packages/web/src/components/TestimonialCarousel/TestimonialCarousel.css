@@ -1,0 +1,111 @@
+.testimonial-carousel {
+  padding: 4rem 0;
+}
+
+.testimonial-carousel-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+  .testimonial-carousel-container {
+    padding: 0 2rem;
+  }
+}
+
+.testimonial-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grab;
+}
+
+.testimonial-carousel-item:active {
+  cursor: grabbing;
+}
+
+.testimonial-company-logo {
+  margin-bottom: 1.75rem;
+  position: relative;
+  height: 2rem;
+  width: 8rem;
+}
+
+.testimonial-company-logo-image {
+  object-fit: contain;
+}
+
+.testimonial-review {
+  max-width: 36rem;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--foreground);
+}
+
+@media (min-width: 640px) {
+  .testimonial-review {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.testimonial-name {
+  margin-top: 1.25rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.testimonial-role {
+  margin-top: 0.375rem;
+  font-weight: 500;
+  color: var(--foreground);
+  opacity: 0.4;
+}
+
+.testimonial-avatar {
+  margin-top: 1.25rem;
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: var(--muted);
+}
+
+.testimonial-avatar-image {
+  object-fit: cover;
+}
+
+.testimonial-pagination {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.testimonial-pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.testimonial-pagination-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background-color: var(--primary);
+  opacity: 0.35;
+  transition: opacity 0.2s;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.testimonial-pagination-dot:hover {
+  opacity: 0.6;
+}
+
+.testimonial-pagination-dot-active {
+  opacity: 1;
+}

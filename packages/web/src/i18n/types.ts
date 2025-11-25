@@ -53,6 +53,15 @@ export interface TranslationSchema {
       };
     };
   };
+  socialProof: {
+    testimonials: {
+      testimonial1: {
+        name: string;
+        role: string;
+        review: string;
+      };
+    };
+  };
 }
 
 /**
