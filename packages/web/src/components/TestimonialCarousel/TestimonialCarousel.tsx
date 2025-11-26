@@ -33,15 +33,28 @@ export const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialC
       });
     }, [api]);
 
+    // Auto-play functionality
+    React.useEffect(() => {
+      if (!api || testimonials.length <= 1) return;
+
+      const interval = setInterval(() => {
+        const currentIndex = api.selectedScrollSnap();
+        const nextIndex = (currentIndex + 1) % testimonials.length;
+        api.scrollTo(nextIndex);
+      }, 5000); // Change slide every 5 seconds
+
+      return () => clearInterval(interval);
+    }, [api, testimonials.length]);
+
     return (
       <div ref={ref} className={cn('testimonial-carousel', className)} {...props}>
         <Carousel setApi={setApi} className="testimonial-carousel-container">
           <CarouselContent>
-            {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.company} className="testimonial-carousel-item">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={`${testimonial.company}-${index}`} className="testimonial-carousel-item">
                 <div className="testimonial-company-logo">
                   <Image
-                    src={`${companyLogoPath}${testimonial.company}.svg`}
+                    src={companyLogoPath ? `${companyLogoPath}${testimonial.company}.svg` : `/${testimonial.company}.svg`}
                     alt={`${testimonial.company} logo`}
                     fill
                     className="testimonial-company-logo-image"
@@ -53,7 +66,7 @@ export const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialC
                 <h5 className="testimonial-role">{testimonial.role}</h5>
                 <div className="testimonial-avatar">
                   <Image
-                    src={`${avatarPath}${testimonial.avatar}`}
+                    src={avatarPath ? `${avatarPath}${testimonial.avatar}` : testimonial.avatar}
                     alt={testimonial.name}
                     fill
                     className="testimonial-avatar-image"
@@ -65,9 +78,10 @@ export const TestimonialCarousel = React.forwardRef<HTMLDivElement, TestimonialC
         </Carousel>
         <div className="testimonial-pagination">
           <div className="testimonial-pagination-dots">
-            {testimonials.map((_, index) => (
+            {testimonials.map((testimonial, index) => (
               <button
-                key={index}
+                key={`${testimonial.company}-dot-${index}`}
+                type="button"
                 className={cn('testimonial-pagination-dot', index === current && 'testimonial-pagination-dot-active')}
                 onClick={() => api?.scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}
