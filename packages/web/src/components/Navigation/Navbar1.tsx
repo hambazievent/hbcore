@@ -1,6 +1,7 @@
 'use client';
 
 import { Menu } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -98,7 +99,9 @@ const Navbar1 = ({
           <div className="flex items-center gap-6">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              {logo.src && <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />}
+              {logo.src && (
+                <Image src={logo.src} width={100} height={32} className="max-h-8 dark:invert" alt={logo.alt} />
+              )}
               <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>
             </Link>
             <div className="flex items-center">
@@ -122,7 +125,9 @@ const Navbar1 = ({
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href={logo.url} className="flex items-center gap-2">
-              {logo.src && <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />}
+              {logo.src && (
+                <Image src={logo.src} width={100} height={32} className="max-h-8 dark:invert" alt={logo.alt} />
+              )}
               {!logo.src && <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>}
             </Link>
             <Sheet>
@@ -135,7 +140,9 @@ const Navbar1 = ({
                 <SheetHeader>
                   <SheetTitle>
                     <Link href={logo.url} className="flex items-center gap-2">
-                      {logo.src && <img src={logo.src} className="max-h-8 dark:invert" alt={logo.alt} />}
+                      {logo.src && (
+                        <Image src={logo.src} width={100} height={32} className="max-h-8 dark:invert" alt={logo.alt} />
+                      )}
                       {!logo.src && <span className="text-lg font-semibold">{logo.title}</span>}
                     </Link>
                   </SheetTitle>
