@@ -34,6 +34,14 @@ export interface TranslationSchema {
         title: string;
         description: string;
       };
+      feature4: {
+        title: string;
+        description: string;
+      };
+      feature5: {
+        title: string;
+        description: string;
+      };
     };
     benefits: {
       benefit1: {

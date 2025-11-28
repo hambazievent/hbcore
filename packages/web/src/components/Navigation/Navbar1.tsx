@@ -49,8 +49,8 @@ const Navbar1 = ({
   logo = {
     url: '#',
     src: '',
-    alt: 'Logo',
-    title: 'Logo',
+    alt: 'همبازی ایونت',
+    title: 'همبازی ایونت',
   },
   menu,
   auth,

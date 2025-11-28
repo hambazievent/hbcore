@@ -16,23 +16,31 @@
   },
   "hero": {
     "title": "From Board Games to Team Building",
-    "subtitle": "Where board games turn into innovative ideas. Play together, build together, grow together.",
+    "subtitle": "Play to know, build a team to win! From friendly banter to the serious battle of ideas.",
     "ctaPrimary": "Sign up",
     "ctaSecondary": "Learn more"
   },
   "featuresAndBenefits": {
     "features": {
       "feature1": {
-        "title": "Custom Board Games",
-        "description": "To strengthen the necessary abilities for team building and competition in the startup world"
+        "title": "Skill-Based and Custom Games",
+        "description": "We don't just roll dice here! With board games designed for the business environment, practice soft skills like negotiation, risk-taking, and strategy in action."
       },
       "feature2": {
-        "title": "Networking",
-        "description": "Opportunity to meet top students and startup enthusiasts and build a team"
+        "title": "Networking in Action",
+        "description": "You need to know people through challenges. In Hambazi, you learn and compete together to build your network and find your team members through complete understanding."
       },
       "feature3": {
-        "title": "Business Concepts Education",
-        "description": "Presenting content related to startups and transferring experience"
+        "title": "Mentoring and Experience Transfer",
+        "description": "Hear key startup concepts from those who have walked this path and learn how to turn your idea into a product."
+      },
+      "feature4": {
+        "title": "Practical Ideation Challenge",
+        "description": "It's not just theory! An exciting challenge in the startup space awaits you to bring your learnings into practice."
+      },
+      "feature5": {
+        "title": "Seed Capital and Cash Prizes",
+        "description": "Top teams don't leave empty-handed. Top teams receive cash prizes. There's also a chance to attract support for brilliant ideas."
       }
     },
     "benefits": {
