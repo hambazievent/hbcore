@@ -34,14 +34,8 @@ interface Navbar1Props {
   };
   menu?: MenuItem[];
   auth?: {
-    login: {
-      title: string;
-      url: string;
-    };
-    signup: {
-      title: string;
-      url: string;
-    };
+    title: string;
+    url: string;
   };
 }
 
@@ -71,21 +65,20 @@ const Navbar1 = ({
 
   // Map existing navigation items to menu structure
   const defaultMenu: MenuItem[] = [
-    { title: t.navigation.home, url: '#hero' },
-    { title: t.navigation.features, url: '#features' },
-    { title: t.navigation.benefits, url: '#benefits' },
-    { title: t.navigation.proof, url: '#proof' },
-    { title: t.navigation.objections, url: '#objections' },
-    { title: t.navigation.cta, url: '#cta' },
+    { title: t.navigation.events, url: '/events' },
+    { title: t.navigation.blog, url: '/blog' },
+    { title: t.navigation.support, url: '/support' },
+    { title: t.navigation.about, url: '/about' },
+    { title: t.navigation.contact, url: '/contact' },
   ];
 
   const defaultAuth = {
-    login: { title: t.common.login, url: '#' },
-    signup: { title: t.navigation.cta, url: '#cta' },
+    title: t.common.auth,
+    url: '/auth',
   };
 
   const menuItems = menu || defaultMenu;
-  const authItems = auth || defaultAuth;
+  const authItem = auth || defaultAuth;
 
   return (
     <section
@@ -111,11 +104,8 @@ const Navbar1 = ({
             </div>
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <Link href={authItems.login.url}>{authItems.login.title}</Link>
-            </Button>
             <Button asChild size="sm">
-              <Link href={authItems.signup.url}>{authItems.signup.title}</Link>
+              <Link href={authItem.url}>{authItem.title}</Link>
             </Button>
           </div>
         </nav>
@@ -159,11 +149,8 @@ const Navbar1 = ({
                       {menuItems.map((item) => renderMobileMenuItem(item))}
                     </Accordion>
                     <div className="flex flex-col gap-3">
-                      <Button asChild variant="outline">
-                        <Link href={authItems.login.url}>{authItems.login.title}</Link>
-                      </Button>
                       <Button asChild>
-                        <Link href={authItems.signup.url}>{authItems.signup.title}</Link>
+                        <Link href={authItem.url}>{authItem.title}</Link>
                       </Button>
                     </div>
                   </div>

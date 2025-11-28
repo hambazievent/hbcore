@@ -9,10 +9,16 @@
     "benefits": "Benefits",
     "proof": "Social Proof",
     "objections": "Handle Objections",
-    "cta": "Call to Action"
+    "cta": "Call to Action",
+    "events": "Events",
+    "blog": "Blog",
+    "support": "Support",
+    "about": "About Us",
+    "contact": "Contact Us"
   },
   "common": {
-    "login": "Log in"
+    "login": "Log in",
+    "auth": "Login / Sign up"
   },
   "hero": {
     "title": "From Board Games to Team Building",
