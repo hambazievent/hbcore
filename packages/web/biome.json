@@ -1,5 +1,5 @@
 {
-  "extends": ["//"],
+  "extends": ["../../biome.json"],
   "files": {
     "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
   },

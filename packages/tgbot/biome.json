@@ -1,5 +1,5 @@
 {
-  "extends": ["//"],
+  "extends": ["../../biome.json"],
   "formatter": {
     "indentStyle": "tab"
   },
