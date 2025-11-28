@@ -1,12 +1,30 @@
 {
-  "name": "db",
-  "module": "index.ts",
-  "type": "module",
+  "name": "@hbcore/db",
+  "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "format": "biome format --write",
+    "format:check": "biome format",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
+    "check": "biome check",
+    "check:fix": "biome check --write",
+    "migration:generate": "bun run src/generate-migration.ts",
+    "migration:run": "bun run src/run-migrations.ts",
+    "migration:revert": "bun run src/revert-migrations.ts"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.1",
+    "pg": "^8.16.3",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.27"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/pg": "^8.15.6"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.9.3",
+    "@hbcore/types": "*"
   }
 }
