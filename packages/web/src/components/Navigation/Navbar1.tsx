@@ -55,7 +55,7 @@ const Navbar1 = ({
   menu,
   auth,
 }: Navbar1Props) => {
-  const { t } = useTranslation();
+  const { t, isRTL } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -124,44 +124,52 @@ const Navbar1 = ({
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href={logo.url} className="flex items-center gap-2">
+            <Link href={logo.url} className={`flex items-center gap-2 ${isRTL ? 'order-2' : 'order-1'}`}>
               {logo.src && (
                 <Image src={logo.src} width={100} height={32} className="max-h-8 dark:invert" alt={logo.alt} />
               )}
               {!logo.src && <span className="text-lg font-semibold tracking-tighter">{logo.title}</span>}
             </Link>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <Link href={logo.url} className="flex items-center gap-2">
-                      {logo.src && (
-                        <Image src={logo.src} width={100} height={32} className="max-h-8 dark:invert" alt={logo.alt} />
-                      )}
-                      {!logo.src && <span className="text-lg font-semibold">{logo.title}</span>}
-                    </Link>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="flex flex-col gap-6 p-4">
-                  <Accordion type="single" collapsible className="flex w-full flex-col gap-4">
-                    {menuItems.map((item) => renderMobileMenuItem(item))}
-                  </Accordion>
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <Link href={authItems.login.url}>{authItems.login.title}</Link>
-                    </Button>
-                    <Button asChild>
-                      <Link href={authItems.signup.url}>{authItems.signup.title}</Link>
-                    </Button>
+            <div className={isRTL ? 'order-1' : 'order-2'}>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <Menu className="size-4" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="overflow-y-auto">
+                  <SheetHeader>
+                    <SheetTitle>
+                      <Link href={logo.url} className="flex items-center gap-2">
+                        {logo.src && (
+                          <Image
+                            src={logo.src}
+                            width={100}
+                            height={32}
+                            className="max-h-8 dark:invert"
+                            alt={logo.alt}
+                          />
+                        )}
+                        {!logo.src && <span className="text-lg font-semibold">{logo.title}</span>}
+                      </Link>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <div className="flex flex-col gap-6 p-4">
+                    <Accordion type="single" collapsible className="flex w-full flex-col gap-4">
+                      {menuItems.map((item) => renderMobileMenuItem(item))}
+                    </Accordion>
+                    <div className="flex flex-col gap-3">
+                      <Button asChild variant="outline">
+                        <Link href={authItems.login.url}>{authItems.login.title}</Link>
+                      </Button>
+                      <Button asChild>
+                        <Link href={authItems.signup.url}>{authItems.signup.title}</Link>
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
