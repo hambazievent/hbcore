@@ -39,7 +39,7 @@ function useCarousel() {
   return context;
 }
 
-const Carousel = React.forwardRef<HTMLSectionElement, React.HTMLAttributes<HTMLSectionElement> & CarouselProps>(
+const Carousel = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement> & CarouselProps>(
   ({ orientation = 'horizontal', opts, setApi, plugins, className, children, ...props }, ref) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
@@ -69,7 +69,7 @@ const Carousel = React.forwardRef<HTMLSectionElement, React.HTMLAttributes<HTMLS
     }, [api]);
 
     const handleKeyDown = React.useCallback(
-      (event: React.KeyboardEvent<HTMLSectionElement>) => {
+      (event: React.KeyboardEvent<HTMLElement>) => {
         if (event.key === 'ArrowLeft') {
           event.preventDefault();
           scrollPrev();
