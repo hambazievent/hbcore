@@ -49,18 +49,18 @@
   order: 2;
 }
 
+.benefit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .benefit-left .benefit-content {
   order: 2;
 }
 
 .benefit-right .benefit-content {
   order: 1;
-}
-
-.benefit-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .benefit-headline {

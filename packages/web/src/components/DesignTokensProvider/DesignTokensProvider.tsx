@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import { designTokens } from '@/lib/design-tokens';
 
-type ColorPalette = 'brand' | 'accent' | 'neutral';
 type ColorScale = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 950;
 
 /**

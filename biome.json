@@ -8,11 +8,6 @@
   "files": {
     "ignoreUnknown": false
   },
-  "css": {
-    "parser": {
-      "tailwindDirectives": true
-    }
-  },
   "formatter": {
     "enabled": true,
     "lineWidth": 120,
