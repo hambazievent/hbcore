@@ -7,6 +7,7 @@ config({ path: join(__dirname, '.env') });
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  transpilePackages: ['@hbcore/types'],
 };
 
 export default nextConfig;

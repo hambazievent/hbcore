@@ -4,6 +4,7 @@
   "scripts": {
     "tgbot:start": "bun run --bun --filter='@hbcore/tgbot' start",
     "tgapp:dev": "bun run --bun --filter='@hbcore/tgapp' dev",
+    "web:build": "bun run --bun --filter='@hbcore/web' build",
     "web:dev": "bun run --bun --filter='@hbcore/web' dev",
     "api:build": "bun run --bun --filter='@hbcore/api' build",
     "api:dev": "bun run --bun --filter='@hbcore/api' dev",

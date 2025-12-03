@@ -5,6 +5,7 @@ WORKDIR /app
 # Copy root package files for workspace setup
 COPY package.json bun.lock* ./
 COPY packages/web/package.json ./packages/web/
+COPY packages/types/package.json ./packages/types/
 
 # Install dependencies
 # Remove --frozen-lockfile to allow lockfile updates if needed
@@ -21,6 +22,9 @@ COPY --from=deps /app/node_modules ./node_modules
 # Copy workspace configuration
 COPY package.json bun.lock* ./
 COPY tsconfig.json ./
+
+# Copy workspace packages needed for build
+COPY packages/types ./packages/types
 
 # Copy web package source files
 COPY packages/web ./packages/web

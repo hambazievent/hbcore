@@ -1,13 +1,13 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { GoogleSignInButton } from '@/components/Auth/GoogleSignInButton';
 import { useAuth } from '@/contexts/AuthContext/AuthContext';
 import { useTranslation } from '@/i18n/useTranslation';
 import './auth.css';
 
-export default function AuthPage() {
+function AuthPageContent() {
   const { t } = useTranslation();
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -47,5 +47,21 @@ export default function AuthPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function AuthPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="auth-page">
+          <div className="auth-page__container">
+            <div>Loading...</div>
+          </div>
+        </div>
+      }
+    >
+      <AuthPageContent />
+    </Suspense>
   );
 }
