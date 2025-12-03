@@ -1,11 +1,24 @@
 /**
  * User domain type
- * 
+ *
  * Minimal user interface following the "Entity Extends Domain Type" pattern.
  * This serves as the base type that will be extended by UserEntity in the db package.
  */
 export interface User {
-	/** Unique identifier for the user (PostgreSQL auto-increment) */
-	id: number;
+  /** Unique identifier for the user (PostgreSQL auto-increment) */
+  id: number;
 }
 
+/**
+ * User profile information
+ */
+export interface UserInfo {
+  /** User email address */
+  email?: string | null;
+  /** User phone number */
+  phone?: string | null;
+  /** User display name */
+  name?: string | null;
+  /** User profile photo URL */
+  photoUrl?: string | null;
+}
