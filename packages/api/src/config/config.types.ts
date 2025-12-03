@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const envSchema = z.object({
   // Server
-  PORT: z.string().default('3001').transform(Number),
+  API_PORT: z.string().default('3001').transform(Number),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   // Postgres
   POSTGRES_HOST: z.string().min(1, 'POSTGRES_HOST is required'),
