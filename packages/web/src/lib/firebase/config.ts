@@ -1,8 +1,11 @@
 /**
  * Firebase client configuration
  * These values should be set in environment variables
+ * 
+ * This function is lazy-loaded to avoid evaluation during build time
+ * when environment variables may not be available.
  */
-function getFirebaseConfig() {
+export function getFirebaseConfig() {
   const apiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
   const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
   const authDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN;
@@ -58,5 +61,3 @@ function getFirebaseConfig() {
 
   return config;
 }
-
-export const firebaseConfig = getFirebaseConfig();

@@ -1,6 +1,6 @@
 import { type FirebaseApp, getApps, initializeApp } from 'firebase/app';
 import { type Auth, GoogleAuthProvider, getAuth } from 'firebase/auth';
-import { firebaseConfig } from './config';
+import { getFirebaseConfig } from './config';
 
 /**
  * Get or initialize Firebase app instance
@@ -11,7 +11,7 @@ function getFirebaseApp(): FirebaseApp {
   if (apps.length > 0) {
     return apps[0];
   }
-  return initializeApp(firebaseConfig);
+  return initializeApp(getFirebaseConfig());
 }
 
 let authInstance: Auth | null = null;
