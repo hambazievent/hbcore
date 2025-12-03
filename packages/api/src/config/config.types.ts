@@ -4,6 +4,11 @@ export const envSchema = z.object({
   // Server
   API_PORT: z.string().default('3001').transform(Number),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+  // CORS
+  CORS_ORIGINS: z
+    .string()
+    .default('http://localhost:3000,http://localhost:3001')
+    .transform((val) => val.split(',').map((origin) => origin.trim())),
   // Postgres
   POSTGRES_HOST: z.string().min(1, 'POSTGRES_HOST is required'),
   POSTGRES_PORT: z.string().min(1, 'POSTGRES_PORT is required'),
