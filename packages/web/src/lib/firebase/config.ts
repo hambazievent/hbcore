@@ -1,11 +1,27 @@
 /**
+ * Check if we're running in a browser environment
+ */
+function isBrowser(): boolean {
+  return typeof window !== 'undefined';
+}
+
+/**
  * Firebase client configuration
  * These values should be set in environment variables
- * 
+ *
  * This function is lazy-loaded to avoid evaluation during build time
  * when environment variables may not be available.
+ * Only works in browser environment to prevent SSR errors.
  */
 export function getFirebaseConfig() {
+  // Only initialize Firebase in browser environment
+  if (!isBrowser()) {
+    throw new Error(
+      'Firebase config can only be accessed in browser environment. ' +
+        'This error should not occur if Firebase is properly initialized client-side only.',
+    );
+  }
+
   const apiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
   const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
   const authDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN;

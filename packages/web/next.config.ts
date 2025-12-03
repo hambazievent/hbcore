@@ -1,9 +1,8 @@
-import { join } from 'node:path';
-import { config } from '@dotenvx/dotenvx';
 import type { NextConfig } from 'next';
 
-// Load environment variables from web package .env file
-config({ path: join(__dirname, '.env') });
+// Next.js automatically loads .env, .env.local, .env.production files
+// NEXT_PUBLIC_ variables are embedded at build time
+// No need to manually load them here
 
 const nextConfig: NextConfig = {
   output: 'standalone',
