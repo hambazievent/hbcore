@@ -1,3 +1,4 @@
+import type { FirebaseAuthCredentialId, FirebaseUserMetadataId } from '@hbcore/types';
 import {
   Column,
   CreateDateColumn,
@@ -18,7 +19,7 @@ import type { FirebaseAuthCredentialEntity } from './firebase-auth-credential.en
 export class FirebaseUserMetadataEntity {
   /** Unique identifier for the metadata record */
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: FirebaseUserMetadataId;
 
   /** Reference to the Firebase auth credential */
   @OneToOne(() => require('./firebase-auth-credential.entity').FirebaseAuthCredentialEntity, {
@@ -30,7 +31,7 @@ export class FirebaseUserMetadataEntity {
 
   /** Firebase auth credential ID (foreign key) */
   @Column({ name: 'firebase_auth_credential_id', unique: true })
-  firebaseAuthCredentialId!: number;
+  firebaseAuthCredentialId!: FirebaseAuthCredentialId;
 
   /** Whether the user's email is verified in Firebase */
   @Column({ type: 'boolean', name: 'email_verified', default: false })

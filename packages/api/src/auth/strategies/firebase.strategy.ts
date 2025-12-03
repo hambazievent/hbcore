@@ -1,4 +1,4 @@
-import type { AuthResult } from '@hbcore/types';
+import { type AuthResult, EmailSchema, FirebaseUidSchema, ProviderUidSchema } from '@hbcore/types';
 import { Injectable } from '@nestjs/common';
 import { FirebaseService } from '@/firebase/firebase.service';
 import { UsersService } from '@/users/users.service';
@@ -20,9 +20,9 @@ export class FirebaseStrategy implements AuthStrategy {
     // Verify the Firebase ID token
     const decodedToken = await this.firebaseService.verifyIdToken(idToken);
 
-    // Extract user information from the decoded token
-    const firebaseUid = decodedToken.uid;
-    const email = decodedToken.email || null;
+    // Extract user information from the decoded token and parse with Zod schemas
+    const firebaseUid = FirebaseUidSchema.parse(decodedToken.uid);
+    const email = decodedToken.email ? EmailSchema.parse(decodedToken.email) : null;
     const name = decodedToken.name || null;
     const photoUrl = decodedToken.picture || null;
 
@@ -68,7 +68,7 @@ export class FirebaseStrategy implements AuthStrategy {
 
     return {
       user,
-      providerUid: firebaseUid,
+      providerUid: ProviderUidSchema.parse(firebaseUid),
     };
   }
 }

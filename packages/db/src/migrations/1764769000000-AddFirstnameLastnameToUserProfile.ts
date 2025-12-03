@@ -21,4 +21,3 @@ export class AddFirstnameLastnameToUserProfile1764769000000 implements Migration
     `);
   }
 }
-

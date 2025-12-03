@@ -1,3 +1,4 @@
+import type { UserId } from '../../src/domain-ids.js';
 import { AuthProvider } from './provider.js';
 
 /**
@@ -5,7 +6,7 @@ import { AuthProvider } from './provider.js';
  */
 export interface AuthCredential {
   /** User ID this credential belongs to */
-  userId: number;
+  userId: UserId;
   /** Authentication provider */
   provider: AuthProvider;
 }

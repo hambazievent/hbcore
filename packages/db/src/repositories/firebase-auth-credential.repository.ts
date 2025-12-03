@@ -1,3 +1,4 @@
+import type { FirebaseAuthCredentialId, FirebaseUid, UserId } from '@hbcore/types';
 import type { DataSource } from 'typeorm';
 import { Repository } from 'typeorm';
 import { FirebaseAuthCredentialEntity } from '../entities/users/firebase-auth-credential.entity.js';
@@ -16,7 +17,7 @@ export class FirebaseAuthCredentialRepository {
   /**
    * Find a credential by ID
    */
-  async findById(id: number): Promise<FirebaseAuthCredentialEntity | null> {
+  async findById(id: FirebaseAuthCredentialId): Promise<FirebaseAuthCredentialEntity | null> {
     return this.repository.findOne({
       where: { id },
       relations: ['user', 'metadata', 'customClaims'],
@@ -26,7 +27,7 @@ export class FirebaseAuthCredentialRepository {
   /**
    * Find a credential by user ID
    */
-  async findByUserId(userId: number): Promise<FirebaseAuthCredentialEntity | null> {
+  async findByUserId(userId: UserId): Promise<FirebaseAuthCredentialEntity | null> {
     return this.repository.findOne({
       where: { userId },
       relations: ['user', 'metadata', 'customClaims'],
@@ -36,7 +37,7 @@ export class FirebaseAuthCredentialRepository {
   /**
    * Find a credential by Firebase UID
    */
-  async findByFirebaseUid(firebaseUid: string): Promise<FirebaseAuthCredentialEntity | null> {
+  async findByFirebaseUid(firebaseUid: FirebaseUid): Promise<FirebaseAuthCredentialEntity | null> {
     return this.repository.findOne({
       where: { firebaseUid },
       relations: ['user', 'metadata', 'customClaims'],
@@ -81,7 +82,7 @@ export class FirebaseAuthCredentialRepository {
   /**
    * Update a credential by ID
    */
-  async update(id: number, data: Partial<FirebaseAuthCredentialEntity>): Promise<void> {
+  async update(id: FirebaseAuthCredentialId, data: Partial<FirebaseAuthCredentialEntity>): Promise<void> {
     // Exclude relation properties from update data
     const { user, metadata, customClaims, ...updateData } = data;
     await this.repository.update(id, updateData as any);
@@ -90,7 +91,7 @@ export class FirebaseAuthCredentialRepository {
   /**
    * Delete a credential by ID (soft delete)
    */
-  async delete(id: number): Promise<void> {
+  async delete(id: FirebaseAuthCredentialId): Promise<void> {
     await this.repository.softDelete(id);
   }
 

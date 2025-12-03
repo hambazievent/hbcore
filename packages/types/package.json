@@ -6,8 +6,12 @@
   "main": "index.ts",
   "types": "index.ts",
   "files": [
-    "index.ts"
+    "index.ts",
+    "src"
   ],
+  "dependencies": {
+    "zod": "^3"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

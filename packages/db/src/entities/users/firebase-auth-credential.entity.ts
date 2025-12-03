@@ -1,4 +1,10 @@
-import { AuthProvider, type FirebaseAuthCredential } from '@hbcore/types';
+import {
+  AuthProvider,
+  type FirebaseAuthCredential,
+  type FirebaseAuthCredentialId,
+  type FirebaseUid,
+  type UserId,
+} from '@hbcore/types';
 import {
   Column,
   CreateDateColumn,
@@ -23,7 +29,7 @@ import { UserEntity } from './user.entity';
 export class FirebaseAuthCredentialEntity implements FirebaseAuthCredential {
   /** Unique identifier for the credential record */
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: FirebaseAuthCredentialId;
 
   /** Reference to the user */
   @ManyToOne(() => UserEntity, { onDelete: 'CASCADE' })
@@ -32,7 +38,7 @@ export class FirebaseAuthCredentialEntity implements FirebaseAuthCredential {
 
   /** User ID (foreign key) */
   @Column({ name: 'user_id' })
-  userId!: number;
+  userId!: UserId;
 
   /** Authentication provider (always 'firebase' for this entity) */
   @Column({ type: 'varchar', length: 20, name: 'provider', default: AuthProvider.FIREBASE })
@@ -40,7 +46,7 @@ export class FirebaseAuthCredentialEntity implements FirebaseAuthCredential {
 
   /** Firebase UID (unique identifier from Firebase) */
   @Column({ type: 'varchar', length: 128, name: 'firebase_uid', unique: true })
-  firebaseUid!: string;
+  firebaseUid!: FirebaseUid;
 
   /** Firebase user metadata */
   @OneToOne(

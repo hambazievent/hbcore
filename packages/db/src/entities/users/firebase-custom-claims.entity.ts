@@ -1,3 +1,4 @@
+import type { FirebaseAuthCredentialId, FirebaseCustomClaimsId } from '@hbcore/types';
 import {
   Column,
   CreateDateColumn,
@@ -18,7 +19,7 @@ import type { FirebaseAuthCredentialEntity } from './firebase-auth-credential.en
 export class FirebaseCustomClaimsEntity {
   /** Unique identifier for the custom claim record */
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: FirebaseCustomClaimsId;
 
   /** Reference to the Firebase auth credential */
   @ManyToOne(
@@ -31,7 +32,7 @@ export class FirebaseCustomClaimsEntity {
 
   /** Firebase auth credential ID (foreign key) */
   @Column({ name: 'firebase_auth_credential_id' })
-  firebaseAuthCredentialId!: number;
+  firebaseAuthCredentialId!: FirebaseAuthCredentialId;
 
   /** Claim key */
   @Column({ type: 'varchar', length: 255, name: 'claim_key' })

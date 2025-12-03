@@ -1,3 +1,5 @@
+import type { Email, Phone, UserId } from '../src/domain-ids.js';
+
 /**
  * User domain type
  *
@@ -6,7 +8,7 @@
  */
 export interface User {
   /** Unique identifier for the user (PostgreSQL auto-increment) */
-  id: number;
+  id: UserId;
 }
 
 /**
@@ -14,9 +16,9 @@ export interface User {
  */
 export interface UserInfo {
   /** User email address */
-  email?: string | null;
+  email?: Email | null;
   /** User phone number */
-  phone?: string | null;
+  phone?: Phone | null;
   /** User display name */
   name?: string | null;
   /** User first name */

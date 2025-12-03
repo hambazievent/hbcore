@@ -1,4 +1,4 @@
-import type { UserInfo } from '@hbcore/types';
+import type { Email, Phone, UserId, UserInfo, UserProfileId } from '@hbcore/types';
 import {
   Column,
   CreateDateColumn,
@@ -19,7 +19,7 @@ import { UserEntity } from './user.entity';
 export class UserProfileEntity implements UserInfo {
   /** Unique identifier for the profile record */
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: UserProfileId;
 
   /** Reference to the user */
   @OneToOne(() => UserEntity, { onDelete: 'CASCADE', nullable: false })
@@ -28,15 +28,15 @@ export class UserProfileEntity implements UserInfo {
 
   /** User ID (foreign key) */
   @Column({ name: 'user_id', unique: true })
-  userId!: number;
+  userId!: UserId;
 
   /** User email address */
   @Column({ type: 'varchar', length: 255, nullable: true })
-  email?: string | null;
+  email?: Email | null;
 
   /** User phone number */
   @Column({ type: 'varchar', length: 20, nullable: true })
-  phone?: string | null;
+  phone?: Phone | null;
 
   /** User display name */
   @Column({ type: 'varchar', length: 255, nullable: true })

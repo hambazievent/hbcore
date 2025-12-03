@@ -1,4 +1,4 @@
-import type { User } from '@hbcore/types';
+import type { User, UserId } from '@hbcore/types';
 import { CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 // @ai: Never modify this file.
@@ -11,7 +11,7 @@ import { CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, Upd
 export class UserEntity implements User {
   /** Unique identifier for the user (PostgreSQL auto-increment) */
   @PrimaryGeneratedColumn()
-  id!: number;
+  id!: UserId;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;

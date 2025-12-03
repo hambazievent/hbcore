@@ -1,3 +1,4 @@
+import type { FirebaseAuthCredentialId, FirebaseCustomClaimsId } from '@hbcore/types';
 import type { DataSource } from 'typeorm';
 import { Repository } from 'typeorm';
 import { FirebaseCustomClaimsEntity } from '../entities/users/firebase-custom-claims.entity.js';
@@ -16,7 +17,7 @@ export class FirebaseCustomClaimsRepository {
   /**
    * Find a claim by ID
    */
-  async findById(id: number): Promise<FirebaseCustomClaimsEntity | null> {
+  async findById(id: FirebaseCustomClaimsId): Promise<FirebaseCustomClaimsEntity | null> {
     return this.repository.findOne({
       where: { id },
       relations: ['credential'],
@@ -26,7 +27,7 @@ export class FirebaseCustomClaimsRepository {
   /**
    * Find claims by Firebase auth credential ID
    */
-  async findByCredentialId(firebaseAuthCredentialId: number): Promise<FirebaseCustomClaimsEntity[]> {
+  async findByCredentialId(firebaseAuthCredentialId: FirebaseAuthCredentialId): Promise<FirebaseCustomClaimsEntity[]> {
     return this.repository.find({
       where: { firebaseAuthCredentialId },
       relations: ['credential'],
@@ -37,7 +38,7 @@ export class FirebaseCustomClaimsRepository {
    * Find a claim by credential ID and claim key
    */
   async findByCredentialIdAndKey(
-    firebaseAuthCredentialId: number,
+    firebaseAuthCredentialId: FirebaseAuthCredentialId,
     claimKey: string,
   ): Promise<FirebaseCustomClaimsEntity | null> {
     return this.repository.findOne({
@@ -84,7 +85,7 @@ export class FirebaseCustomClaimsRepository {
   /**
    * Update a claim by ID
    */
-  async update(id: number, data: Partial<FirebaseCustomClaimsEntity>): Promise<void> {
+  async update(id: FirebaseCustomClaimsId, data: Partial<FirebaseCustomClaimsEntity>): Promise<void> {
     // Exclude relation properties from update data
     const { credential, ...updateData } = data;
     await this.repository.update(id, updateData as any);
@@ -93,14 +94,14 @@ export class FirebaseCustomClaimsRepository {
   /**
    * Delete a claim by ID (soft delete)
    */
-  async delete(id: number): Promise<void> {
+  async delete(id: FirebaseCustomClaimsId): Promise<void> {
     await this.repository.softDelete(id);
   }
 
   /**
    * Delete claims by credential ID
    */
-  async deleteByCredentialId(firebaseAuthCredentialId: number): Promise<void> {
+  async deleteByCredentialId(firebaseAuthCredentialId: FirebaseAuthCredentialId): Promise<void> {
     await this.repository.softDelete({ firebaseAuthCredentialId });
   }
 

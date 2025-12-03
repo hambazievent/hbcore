@@ -1,3 +1,4 @@
+import type { FirebaseAuthCredentialId, FirebaseUserMetadataId } from '@hbcore/types';
 import type { DataSource } from 'typeorm';
 import { Repository } from 'typeorm';
 import { FirebaseUserMetadataEntity } from '../entities/users/firebase-user-metadata.entity.js';
@@ -16,7 +17,7 @@ export class FirebaseUserMetadataRepository {
   /**
    * Find metadata by ID
    */
-  async findById(id: number): Promise<FirebaseUserMetadataEntity | null> {
+  async findById(id: FirebaseUserMetadataId): Promise<FirebaseUserMetadataEntity | null> {
     return this.repository.findOne({
       where: { id },
       relations: ['credential'],
@@ -26,7 +27,9 @@ export class FirebaseUserMetadataRepository {
   /**
    * Find metadata by Firebase auth credential ID
    */
-  async findByCredentialId(firebaseAuthCredentialId: number): Promise<FirebaseUserMetadataEntity | null> {
+  async findByCredentialId(
+    firebaseAuthCredentialId: FirebaseAuthCredentialId,
+  ): Promise<FirebaseUserMetadataEntity | null> {
     return this.repository.findOne({
       where: { firebaseAuthCredentialId },
       relations: ['credential'],
@@ -71,7 +74,7 @@ export class FirebaseUserMetadataRepository {
   /**
    * Update metadata by ID
    */
-  async update(id: number, data: Partial<FirebaseUserMetadataEntity>): Promise<void> {
+  async update(id: FirebaseUserMetadataId, data: Partial<FirebaseUserMetadataEntity>): Promise<void> {
     // Exclude relation properties from update data
     const { credential, ...updateData } = data;
     await this.repository.update(id, updateData as any);
@@ -80,7 +83,7 @@ export class FirebaseUserMetadataRepository {
   /**
    * Delete metadata by ID (soft delete)
    */
-  async delete(id: number): Promise<void> {
+  async delete(id: FirebaseUserMetadataId): Promise<void> {
     await this.repository.softDelete(id);
   }
 

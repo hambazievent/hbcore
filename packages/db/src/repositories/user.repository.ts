@@ -1,3 +1,4 @@
+import type { UserId } from '@hbcore/types';
 import type { DataSource } from 'typeorm';
 import { Repository } from 'typeorm';
 import { UserEntity } from '../entities/users/user.entity.js';
@@ -16,7 +17,7 @@ export class UserRepository {
   /**
    * Find a user by ID
    */
-  async findById(id: number): Promise<UserEntity | null> {
+  async findById(id: UserId): Promise<UserEntity | null> {
     return this.repository.findOne({
       where: { id },
     });
@@ -58,14 +59,14 @@ export class UserRepository {
   /**
    * Update a user by ID
    */
-  async update(id: number, data: Partial<UserEntity>): Promise<void> {
+  async update(id: UserId, data: Partial<UserEntity>): Promise<void> {
     await this.repository.update(id, data);
   }
 
   /**
    * Delete a user by ID (soft delete)
    */
-  async delete(id: number): Promise<void> {
+  async delete(id: UserId): Promise<void> {
     await this.repository.softDelete(id);
   }
 

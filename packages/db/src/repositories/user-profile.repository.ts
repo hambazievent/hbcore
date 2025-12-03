@@ -1,3 +1,4 @@
+import type { Email, Phone, UserId, UserProfileId } from '@hbcore/types';
 import type { DataSource } from 'typeorm';
 import { Repository } from 'typeorm';
 import { UserProfileEntity } from '../entities/users/user-profile.entity.js';
@@ -16,7 +17,7 @@ export class UserProfileRepository {
   /**
    * Find a profile by ID
    */
-  async findById(id: number): Promise<UserProfileEntity | null> {
+  async findById(id: UserProfileId): Promise<UserProfileEntity | null> {
     return this.repository.findOne({
       where: { id },
       relations: ['user'],
@@ -26,7 +27,7 @@ export class UserProfileRepository {
   /**
    * Find a profile by user ID
    */
-  async findByUserId(userId: number): Promise<UserProfileEntity | null> {
+  async findByUserId(userId: UserId): Promise<UserProfileEntity | null> {
     return this.repository.findOne({
       where: { userId },
       relations: ['user'],
@@ -36,7 +37,7 @@ export class UserProfileRepository {
   /**
    * Find a profile by email
    */
-  async findByEmail(email: string): Promise<UserProfileEntity | null> {
+  async findByEmail(email: Email): Promise<UserProfileEntity | null> {
     return this.repository.findOne({
       where: { email },
       relations: ['user'],
@@ -46,7 +47,7 @@ export class UserProfileRepository {
   /**
    * Find a profile by phone
    */
-  async findByPhone(phone: string): Promise<UserProfileEntity | null> {
+  async findByPhone(phone: Phone): Promise<UserProfileEntity | null> {
     return this.repository.findOne({
       where: { phone },
       relations: ['user'],
@@ -91,14 +92,14 @@ export class UserProfileRepository {
   /**
    * Update a profile by ID
    */
-  async update(id: number, data: Partial<UserProfileEntity>): Promise<void> {
+  async update(id: UserProfileId, data: Partial<UserProfileEntity>): Promise<void> {
     await this.repository.update(id, data);
   }
 
   /**
    * Delete a profile by ID (soft delete)
    */
-  async delete(id: number): Promise<void> {
+  async delete(id: UserProfileId): Promise<void> {
     await this.repository.softDelete(id);
   }
 

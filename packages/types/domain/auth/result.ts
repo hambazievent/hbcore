@@ -1,3 +1,4 @@
+import type { ProviderUid } from '../../src/domain-ids.js';
 import type { User, UserInfo } from '../user.js';
 
 /**
@@ -7,6 +8,5 @@ export interface AuthResult {
   /** The authenticated user */
   user: User & UserInfo;
   /** Provider-specific identifier (e.g., Firebase UID) */
-  providerUid: string;
+  providerUid: ProviderUid;
 }
-
