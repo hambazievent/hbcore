@@ -16,6 +16,8 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { useTranslation } from '@/i18n/useTranslation';
+import { useAuth } from '@/contexts/AuthContext/AuthContext';
+import { UserProfile } from '@/components/Auth/UserProfile';
 
 interface MenuItem {
   title: string;
@@ -50,6 +52,7 @@ const Navbar1 = ({
   auth,
 }: Navbar1Props) => {
   const { t, isRTL } = useTranslation();
+  const { user, loading: authLoading } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -104,9 +107,15 @@ const Navbar1 = ({
             </div>
           </div>
           <div className="flex gap-2">
-            <Button asChild size="sm">
-              <Link href={authItem.url}>{authItem.title}</Link>
-            </Button>
+            {authLoading ? (
+              <div className="text-sm text-muted-foreground">Loading...</div>
+            ) : user ? (
+              <UserProfile />
+            ) : (
+              <Button asChild size="sm">
+                <Link href={authItem.url}>{authItem.title}</Link>
+              </Button>
+            )}
           </div>
         </nav>
 
@@ -149,9 +158,15 @@ const Navbar1 = ({
                       {menuItems.map((item) => renderMobileMenuItem(item))}
                     </Accordion>
                     <div className="flex flex-col gap-3">
-                      <Button asChild>
-                        <Link href={authItem.url}>{authItem.title}</Link>
-                      </Button>
+                      {authLoading ? (
+                        <div className="text-sm text-muted-foreground">Loading...</div>
+                      ) : user ? (
+                        <UserProfile />
+                      ) : (
+                        <Button asChild>
+                          <Link href={authItem.url}>{authItem.title}</Link>
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </SheetContent>

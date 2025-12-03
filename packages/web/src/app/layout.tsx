@@ -4,6 +4,7 @@ import { DesignTokensProvider } from '@/components/DesignTokensProvider/DesignTo
 import { Footer } from '@/components/Footer/Footer';
 import { LanguageAttributes } from '@/components/LanguageAttributes/LanguageAttributes';
 import { Navbar1 } from '@/components/Navigation/Navbar1';
+import { AuthProvider } from '@/contexts/AuthContext/AuthProvider';
 import enTranslations from '@/i18n/locales/en.json';
 import faTranslations from '@/i18n/locales/fa.json';
 import type { Language } from '@/i18n/TranslationProvider';
@@ -31,12 +32,14 @@ export default function RootLayout({
     <html lang="fa" dir="rtl" className="dark">
       <body className={`${rubik.variable} ${vazirmatn.variable} ${geistMono.variable} antialiased`}>
         <DesignTokensProvider />
-        <TranslationProvider>
-          <LanguageAttributes />
-          <Navbar1 />
-          <main>{children}</main>
-          <Footer />
-        </TranslationProvider>
+        <AuthProvider>
+          <TranslationProvider>
+            <LanguageAttributes />
+            <Navbar1 />
+            <main>{children}</main>
+            <Footer />
+          </TranslationProvider>
+        </AuthProvider>
       </body>
     </html>
   );
