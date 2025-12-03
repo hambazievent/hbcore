@@ -19,4 +19,3 @@ export class ConfigService {
 		this.e = parsed.data;
 	}
 }
-
