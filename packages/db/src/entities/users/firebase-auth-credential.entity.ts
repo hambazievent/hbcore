@@ -6,6 +6,7 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -49,6 +50,10 @@ export class FirebaseAuthCredentialEntity implements FirebaseAuthCredential {
   metadata?: FirebaseUserMetadataEntity;
 
   /** Firebase custom claims */
+  @OneToMany(
+    () => FirebaseCustomClaimsEntity,
+    (claim) => claim.credential,
+  )
   customClaims?: FirebaseCustomClaimsEntity[];
 
   @CreateDateColumn({ name: 'created_at' })

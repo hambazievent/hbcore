@@ -6,7 +6,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "nest build",
+    "build": "nest build && tsc-alias -p tsconfig.build.json",
     "format": "bunx biome format --write src",
     "format:check": "bunx biome format src",
     "lint": "biome lint src test",
@@ -50,6 +50,7 @@
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tsc-alias": "^1.8.10",
     "typescript": "^5.7.3"
   },
   "jest": {

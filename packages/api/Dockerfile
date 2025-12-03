@@ -55,6 +55,7 @@ COPY --from=builder --chown=nestjs:nodejs /app/packages/db ./packages/db
 # Copy built API application
 COPY --from=builder --chown=nestjs:nodejs /app/packages/api/dist ./packages/api/dist
 COPY --from=builder --chown=nestjs:nodejs /app/packages/api/package.json ./packages/api/
+COPY --from=builder --chown=nestjs:nodejs /app/packages/api/tsconfig.json ./packages/api/
 
 # Copy root package.json for workspace resolution
 COPY --from=builder --chown=nestjs:nodejs /app/package.json ./

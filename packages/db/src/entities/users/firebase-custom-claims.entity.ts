@@ -8,7 +8,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { FirebaseAuthCredentialEntity } from './firebase-auth-credential.entity';
+import type { FirebaseAuthCredentialEntity } from './firebase-auth-credential.entity';
 
 /**
  * Firebase custom claims entity.
@@ -22,8 +22,8 @@ export class FirebaseCustomClaimsEntity {
 
   /** Reference to the Firebase auth credential */
   @ManyToOne(
-    () => FirebaseAuthCredentialEntity,
-    (credential) => credential.customClaims,
+    () => require('./firebase-auth-credential.entity').FirebaseAuthCredentialEntity,
+    (credential: FirebaseAuthCredentialEntity) => credential.customClaims,
     { onDelete: 'CASCADE' },
   )
   @JoinColumn({ name: 'firebase_auth_credential_id' })
@@ -34,7 +34,7 @@ export class FirebaseCustomClaimsEntity {
   firebaseAuthCredentialId!: number;
 
   /** Claim key */
-  @Column({ type: 'varchar', length: 255 })
+  @Column({ type: 'varchar', length: 255, name: 'claim_key' })
   claimKey!: string;
 
   /** Claim value (stored as JSON) */
